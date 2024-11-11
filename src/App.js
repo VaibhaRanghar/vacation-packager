@@ -12,8 +12,9 @@ function App() {
     setItem((items) => [...items, item]);
   }
   function deleteAll(){   
-      const confirm = window.confirm("Are you sure you want to delete all items?");
-      if(confirm) setItem(() => item.splice(0,item.length));
+    setItem(() => item.splice(0,item.length));
+    console.log("items deleted. Items array =  " ,item);
+    
   }
   function deleteItems(id) {
     setItem((items) => items.filter((item) => item.id !== id));
